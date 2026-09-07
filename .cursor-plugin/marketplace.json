@@ -1,0 +1,25 @@
+{
+  "name": "aegis-local",
+  "owner": {
+    "name": "Vismantas"
+  },
+  "metadata": {
+    "description": "Local Aegis control MCP plugin (receipts, verify-done, no-fake-done)."
+  },
+  "plugins": [
+    {
+      "name": "aegis",
+      "source": "cursor-plugin",
+      "description": "Aegis control layer \u2014 receipts, verify-done, no-fake-done, memory pull, freeze-on-lie.",
+      "version": "0.1.0",
+      "logo": "cursor-plugin/assets/logo.png",
+      "keywords": [
+        "mcp",
+        "reliability",
+        "receipts",
+        "aegis"
+      ],
+      "mcpServers": "mcp.json"
+    }
+  ]
+}

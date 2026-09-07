@@ -1,0 +1,10 @@
+# Aegis marketplace repo — ship only the Cursor plugin
+.git-bare-origin/
+pack/
+install/
+*.bak*
+*.bak-*
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+var/
