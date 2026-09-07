@@ -20,9 +20,19 @@ from mcp_common.paths import hooks_dir, repo_root
 
 
 def _aegis_icons() -> list[Icon]:
-    """Match Context7 shape: one HTTPS PNG in serverInfo.icons (MCP row uses this)."""
-    https_png = "https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.png"
-    return [Icon(src=https_png, mimeType="image/png", sizes=["512x512", "any"])]
+    """MCP-row icons: HTTPS PNG only (Context7 shape). Prefer jsDelivr over raw.githubusercontent."""
+    return [
+        Icon(
+            src="https://cdn.jsdelivr.net/gh/Viss007/aegis-cursor-plugin@main/assets/logo.png",
+            mimeType="image/png",
+            sizes=["512x512", "any"],
+        ),
+        Icon(
+            src="https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.png",
+            mimeType="image/png",
+            sizes=["512x512", "any"],
+        ),
+    ]
 
 
 mcp = FastMCP(

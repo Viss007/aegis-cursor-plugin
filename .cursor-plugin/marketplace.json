@@ -11,8 +11,8 @@
       "name": "aegis",
       "source": "cursor-plugin",
       "description": "Aegis control layer \u2014 receipts, verify-done, no-fake-done, memory pull, freeze-on-lie.",
-      "version": "0.1.7",
-      "logo": "https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.png",
+      "version": "0.1.8",
+      "logo": "https://cdn.jsdelivr.net/gh/Viss007/aegis-cursor-plugin@main/assets/logo.png",
       "keywords": [
         "mcp",
         "reliability",
