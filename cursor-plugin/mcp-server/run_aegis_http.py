@@ -8,7 +8,7 @@ from pathlib import Path
 
 os.environ.setdefault("AEGIS_TRANSPORT", "streamable-http")
 os.environ.setdefault("AEGIS_HOST", "127.0.0.1")
-os.environ.setdefault("AEGIS_PORT", "8815")
+os.environ.setdefault("AEGIS_PORT", "18715")
 os.environ.setdefault("VISS_REPO_ROOT", r"C:\Users\Vismantas\Desktop\viss-workspace")
 os.environ.setdefault("WORKSPACE_ROOT", r"C:\Users\Vismantas\Desktop\viss-workspace")
 os.environ.setdefault("PYTHONUNBUFFERED", "1")

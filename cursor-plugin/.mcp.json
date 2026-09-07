@@ -1,6 +1,6 @@
 {
   "Aegis": {
     "type": "http",
-    "url": "http://127.0.0.1:8815/mcp"
+    "url": "http://127.0.0.1:18715/mcp"
   }
 }
