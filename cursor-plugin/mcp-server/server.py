@@ -38,7 +38,6 @@ def _aegis_icons() -> list[Icon]:
 mcp = FastMCP(
     "Aegis",
     icons=_aegis_icons(),
-    website_url="https://github.com/Viss007/aegis-cursor-plugin",
     instructions=(
         "Aegis control layer â€” receipts, verify-done, no-fake-done, "
         "memory pull, freeze-on-lie. Local only."

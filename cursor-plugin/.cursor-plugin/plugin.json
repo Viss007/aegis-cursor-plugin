@@ -1,6 +1,6 @@
 {
   "name": "aegis",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Aegis control layer \u2014 receipts, verify-done, no-fake-done, memory pull, freeze-on-lie. Local MCP for reliable agents.",
   "author": {
     "name": "Vismantas"
@@ -13,7 +13,5 @@
   ],
   "logo": "logo.svg",
   "mcpServers": "mcp.json",
-  "displayName": "Aegis",
-  "repository": "https://github.com/Viss007/aegis-cursor-plugin",
-  "homepage": "https://github.com/Viss007/aegis-cursor-plugin"
+  "displayName": "Aegis"
 }
