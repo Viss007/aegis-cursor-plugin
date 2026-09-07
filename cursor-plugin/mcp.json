@@ -1,16 +1,8 @@
 {
   "mcpServers": {
     "Aegis": {
-      "command": "C:\\Users\\Vismantas\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
-      "args": [
-        "C:\\Users\\Vismantas\\Desktop\\viss-workspace\\aegis\\cursor-plugin\\mcp-server\\run_aegis.py"
-      ],
-      "env": {
-        "VISS_REPO_ROOT": "C:\\Users\\Vismantas\\Desktop\\viss-workspace",
-        "WORKSPACE_ROOT": "C:\\Users\\Vismantas\\Desktop\\viss-workspace",
-        "PYTHONPATH": "C:\\Users\\Vismantas\\Desktop\\viss-workspace\\agent_tools",
-        "PYTHONUNBUFFERED": "1"
-      }
+      "type": "http",
+      "url": "http://127.0.0.1:8815/mcp"
     }
   }
 }

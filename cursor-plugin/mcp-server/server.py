@@ -596,4 +596,15 @@ def freeze_status() -> str:
 
 
 if __name__ == "__main__":
-    mcp.run()
+    import os
+
+    transport = (os.environ.get("AEGIS_TRANSPORT") or "stdio").strip().lower()
+    if transport in {"http", "streamable-http", "sse"}:
+        host = (os.environ.get("AEGIS_HOST") or "127.0.0.1").strip()
+        port = int(os.environ.get("AEGIS_PORT") or "8815")
+        mcp.settings.host = host
+        mcp.settings.port = port
+        mcp.run(transport="sse" if transport == "sse" else "streamable-http")
+    else:
+        mcp.run()
+
