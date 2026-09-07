@@ -1,6 +1,6 @@
 {
   "name": "aegis",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Aegis control layer \u2014 receipts, verify-done, no-fake-done, memory pull, freeze-on-lie. Local MCP for reliable agents.",
   "author": {
     "name": "Vismantas"
