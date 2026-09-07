@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import re
@@ -20,39 +20,15 @@ from mcp_common.paths import hooks_dir, repo_root
 
 
 def _aegis_icons() -> list[Icon]:
-    """Logo for MCP serverInfo.icons — HTTPS first (plugin logo URL), then local data URI."""
-    https_svg = "https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.svg"
+    """Match Context7 shape: one HTTPS PNG in serverInfo.icons (MCP row uses this)."""
     https_png = "https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.png"
-    icons: list[Icon] = [
-        Icon(src=https_svg, mimeType="image/svg+xml", sizes=["any"]),
-        Icon(src=https_png, mimeType="image/png", sizes=["512x512", "any"]),
-    ]
-    candidates = [
-        Path(__file__).resolve().parent / "icon.png",
-        Path(__file__).resolve().parents[2] / "aegis" / "cursor-plugin" / "assets" / "logo.png",
-    ]
-    for path in candidates:
-        try:
-            if path.is_file() and path.stat().st_size > 0:
-                import base64
-
-                b64 = base64.standard_b64encode(path.read_bytes()).decode("ascii")
-                icons.append(
-                    Icon(
-                        src=f"data:image/png;base64,{b64}",
-                        mimeType="image/png",
-                        sizes=["512x512", "any"],
-                    )
-                )
-                break
-        except OSError:
-            continue
-    return icons
+    return [Icon(src=https_png, mimeType="image/png", sizes=["512x512", "any"])]
 
 
 mcp = FastMCP(
     "Aegis",
     icons=_aegis_icons(),
+    website_url="https://github.com/Viss007/aegis-cursor-plugin",
     instructions=(
         "Aegis control layer â€” receipts, verify-done, no-fake-done, "
         "memory pull, freeze-on-lie. Local only."
