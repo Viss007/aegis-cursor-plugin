@@ -11,6 +11,6 @@
     "receipts",
     "aegis"
   ],
-  "logo": "assets/logo.png",
+  "logo": "https://raw.githubusercontent.com/Viss007/aegis-cursor-plugin/main/assets/logo.png",
   "mcpServers": "mcp.json"
 }
