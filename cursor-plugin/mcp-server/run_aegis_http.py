@@ -9,19 +9,21 @@ from pathlib import Path
 os.environ.setdefault("AEGIS_TRANSPORT", "streamable-http")
 os.environ.setdefault("AEGIS_HOST", "127.0.0.1")
 os.environ.setdefault("AEGIS_PORT", "18715")
-os.environ.setdefault("VISS_REPO_ROOT", r"C:\Users\Vismantas\Desktop\viss-workspace")
-os.environ.setdefault("WORKSPACE_ROOT", r"C:\Users\Vismantas\Desktop\viss-workspace")
 os.environ.setdefault("PYTHONUNBUFFERED", "1")
 
 here = Path(__file__).resolve().parent
-at = Path(r"C:\Users\Vismantas\Desktop\viss-workspace\agent_tools")
-if str(at) not in sys.path:
-    sys.path.insert(0, str(at))
-if str(here) not in sys.path:
-    sys.path.insert(0, str(here))
+sys.path.insert(0, str(here))
+from plugin_paths import agent_tools, prepend_sys_path  # noqa: E402
 
-bundled = here / "server.py"
-fallback = at / "aegis-mcp" / "server.py"
-SERVER = bundled if bundled.is_file() else fallback
+at = agent_tools()
+if at is not None:
+    os.environ.setdefault("VISS_REPO_ROOT", str(at.parent))
+    os.environ.setdefault("WORKSPACE_ROOT", str(at.parent))
+
+prepend_sys_path(sys)
+SERVER = here / "server.py"
+if not SERVER.is_file():
+    sys.stderr.write(f"Aegis server missing: {SERVER}\n")
+    raise SystemExit(2)
 sys.argv[0] = str(SERVER)
 runpy.run_path(str(SERVER), run_name="__main__")

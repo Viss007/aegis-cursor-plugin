@@ -1,9 +1,15 @@
 # Aegis - Status
 
 **Date:** 2026-09-07 (Europe/Vilnius)
-**Updated:** 2026-09-07 22:10 (Europe/Vilnius)
+**Updated:** 2026-09-08
 
-**State:** control MCP landed (egis-mcp) — receipts / verify-done / no-fake-done / freeze / memory_pull as callable tools.
+**State:** control MCP live on this desk. Plugin 0.1.11 source has portable launchers + hooks in the plugin ball. GitHub cache may still be 0.1.10 until push.
+
+## Next
+
+1. Push plugin 0.1.11 if the GitHub install should load hooks.
+2. One-shot install for a stranger is still an outline (`install/README.md`).
+3. Do not mutate live `.cursor/hooks.json` without Exact GO.
 
 ## Lock (Viss, 2026-09-07) - MCP app
 
@@ -29,10 +35,6 @@
 - **Control MCP:** `agent_tools/aegis-mcp/server.py` junctioned at `pack/mcp/aegis-mcp/src`
   - Tools: `receipt_begin`, `receipt_log`, `receipt_finish`, `no_fake_done`, `verify_done`, `memory_pull`, `freeze_on_lie`, `freeze_status`
   - State: `var/aegis/receipts/`, `var/aegis/freeze.json`
-
-## Next
-
-control MCP landed
 
 ## Not present
 

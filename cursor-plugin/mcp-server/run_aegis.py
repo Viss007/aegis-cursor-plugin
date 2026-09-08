@@ -1,4 +1,4 @@
-"""Aegis plugin MCP entry — prefer bundled server.py, else workspace live server."""
+"""Aegis plugin MCP entry — bundled server.py. Optional agent_tools via env or sibling layout."""
 from __future__ import annotations
 
 import runpy
@@ -7,16 +7,12 @@ from pathlib import Path
 
 here = Path(__file__).resolve().parent
 bundled = here / "server.py"
-fallback = Path(r"C:\Users\Vismantas\Desktop\viss-workspace\agent_tools\aegis-mcp\server.py")
-SERVER = bundled if bundled.is_file() else fallback
-if not SERVER.is_file():
-    sys.stderr.write(f"Aegis server missing: {SERVER}\n")
+if not bundled.is_file():
+    sys.stderr.write(f"Aegis server missing: {bundled}\n")
     raise SystemExit(2)
-at = Path(r"C:\Users\Vismantas\Desktop\viss-workspace\agent_tools")
-if str(at) not in sys.path:
-    sys.path.insert(0, str(at))
-# also allow importing sibling aegis_core
-if str(here) not in sys.path:
-    sys.path.insert(0, str(here))
-sys.argv[0] = str(SERVER)
-runpy.run_path(str(SERVER), run_name="__main__")
+
+from plugin_paths import prepend_sys_path  # noqa: E402
+
+prepend_sys_path(sys)
+sys.argv[0] = str(bundled)
+runpy.run_path(str(bundled), run_name="__main__")
